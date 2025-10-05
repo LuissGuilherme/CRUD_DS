@@ -27,7 +27,7 @@ def inserir():
             break
         except ValueError:
             print("Preço inválido. Por favor, use um número (use '.' para centavos. Ex: 12.50).")
-
+ 
     inventario.inserir_produto(nome, quantidade, preco)
     input("\nPressione Enter para voltar ao menu...")
 

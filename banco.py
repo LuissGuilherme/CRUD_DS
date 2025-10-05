@@ -13,7 +13,7 @@ def iniciar_banco():
         quantidade INTEGER NOT NULL,
         preco REAL NOT NULL
         )
-    """)
+    """) 
 
 # Verificação se há produtos no banco
 def verificacao_banco():
