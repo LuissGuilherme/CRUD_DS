@@ -46,6 +46,16 @@ def atualizar():
     
     
     inventario.listar_produtos()
+    while True: 
+        try:
+            id_produto = int(input("Digite o ID do produto que deseja atualizar: ").strip())
+            if inventario.id_existe(id_produto):
+                break 
+            else:
+                print(f"Erro: O ID '{id_produto}' não foi encontrado. Tente novamente.")
+
+        except ValueError:
+            print("ID inválido. Por favor, digite um número inteiro.")
     
     
     while True:
@@ -105,16 +115,16 @@ def main():
         opcao = input("Digite a opção:")
         match opcao:
             case "1":
-                print("Inserir Produtos: ")
+                print("Inserir Produtos ")
                 inserir()
             case "2":
-                print("Listar Produtos: ")  
+                print("Listar Produtos ")  
                 listar()
             case "3":
-                print("Atualizar dados")
+                print("Atualizar Produtos")
                 atualizar()
             case "4":
-                print("Excluir dados") 
+                print("Excluir Produtos") 
                 excluir() 
             case "0":
                sys.exit(0) 

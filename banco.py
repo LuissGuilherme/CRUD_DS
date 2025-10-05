@@ -63,6 +63,11 @@ def excluir_produto(id_produto):
     else:
         print("Produto não encontrado na tabela!")
 
+def id_existe(id_produto):
+    cursor.execute("SELECT COUNT(*) FROM produtos WHERE id = ?", (id_produto,))
+    count = cursor.fetchone()[0]
+    return count > 0
+
 def fechar_banco():
     conexao.commit()
     conexao.close()
